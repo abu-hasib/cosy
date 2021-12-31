@@ -1,0 +1,281 @@
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
+:root {
+	/* colors */
+
+	/* primary */
+	--clr-dark-gray: 0, 0%, 63%;
+	--clr-black: 0, 0%, 0%;
+	--clr-light: 0, 0%, 100%;
+	--clr-very-dark-gray: 0, 0%, 27%;
+
+	/* font-sizes */
+	--fs-900: 9.375rem;
+	--fs-800: 6.25rem;
+	--fs-700: 3.5rem;
+	--fs-600: 2rem;
+	--fs-500: 1.75rem;
+	--fs-400: 1.125rem;
+	--fs-300: 1rem;
+	--fs-200: 0.875rem;
+
+	/* font weight */
+	--fw-500: 500;
+	--fw-600: 600;
+	--fw-700: 700;
+
+	/* font-families */
+	--ff-sans-normal: 'Spartan', sans-serif;
+}
+
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+/* Box sizing */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Reset margins */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+figure,
+picture {
+	margin: 0;
+}
+
+/* set body defaults */
+
+body {
+	line-height: 1.5;
+	min-height: 100vh;
+	background-color: hsl(var(--clr-light));
+	font-family: var(--ff-sans-normal);
+	font-size: var(--fs-200);
+	color: hsl(var(--clr-dark-gray));
+	margin: 0;
+	text-rendering: optimizeSpeed;
+}
+
+/* Make images easier to work with */
+
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+/* forms defaults */
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* specifics */
+ul {
+	list-style: none;
+}
+
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
+
+/* general */
+
+.grid {
+	display: grid;
+	gap: var(--gap, 1rem);
+}
+
+.flex {
+	display: flex;
+	gap: var(--gap, 1rem);
+}
+
+.block {
+	display: block;
+}
+
+.container {
+	max-width: 80em;
+	padding-inline: 2em;
+	margin-inline: auto;
+}
+
+.hide {
+	display: hidden;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+/* colors */
+.bg-blue {
+	background-color: hsl(var(--clr-blue));
+}
+
+.bg-dark-blue {
+	background-color: hsl(var(--clr-dark-blue));
+}
+
+.text-faint {
+	color: hsl(var(--clr-pale-blue));
+}
+/* typography */
+
+.ff-sans {
+	font-family: var(--ff-sans);
+}
+.fs-900 {
+	font-size: var(--fs-900);
+}
+.fs-800 {
+	font-size: var(--fs-800);
+}
+.fs-700 {
+	font-size: var(--fs-700);
+}
+.fs-600 {
+	font-size: var(--fs-600);
+}
+.fs-500 {
+	font-size: var(--fs-500);
+}
+.fs-400 {
+	font-size: var(--fs-400);
+}
+.fs-300 {
+	font-size: var(--fs-300);
+}
+.fs-200 {
+	font-size: var(--fs-200);
+}
+
+.fw-300 {
+	font-weight: 300;
+}
+
+.letter-spacing-1 {
+	letter-spacing: 4.75px;
+}
+.letter-spacing-2 {
+	letter-spacing: 2.7px;
+}
+.letter-spacing-3 {
+	letter-spacing: 2.35px;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap; /* added line */
+	border: 0;
+}
+
+/* ----------- */
+/* Components  */
+/* ------------*/
+
+.grid-container {
+	height: 100vh;
+}
+
+.primary-nav a {
+	text-decoration: none;
+}
+
+@media (max-width: 30em) {
+	.header {
+		position: absolute;
+		top: 0;
+		align-items: center;
+		justify-content: center;
+		height: 10vh;
+	}
+
+	.brand {
+		/* margin-left: 2em; */
+	}
+
+	.brand-plus {
+		justify-content: space-between;
+	}
+
+	.nav-toggle[aria-expanded='true'] {
+		background-image: url(./images/icon-close.svg);
+	}
+	.nav-toggle {
+		display: block;
+		background: transparent;
+		background-image: url(./images/icon-hamburger.svg);
+		background-repeat: no-repeat;
+		border: 0;
+		width: 2em;
+		z-index: 99;
+		transition: background-image 500ms ease-in-out;
+	}
+	.hero-top {
+		background-image: url(./images/mobile-image-hero-1.jpg);
+		background-position: top left;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-color: hsl(var(--clr-light));
+		height: 40vh;
+	}
+
+	.primary-nav {
+		position: absolute;
+		inset: 0 0 40% 0;
+		background-color: hsl(var(--clr-light));
+		width: 100vw;
+		height: 5em;
+		z-index: 9;
+		justify-content: center;
+		align-items: center;
+		transform: translateY(-150%);
+		transition: transform 400ms ease-in-out;
+	}
+
+	.primary-nav > li > a {
+		color: hsl(var(--clr-black));
+		text-transform: lowercase;
+	}
+	.primary-nav[data-open='true'] {
+		transform: translateY(0);
+		/* background-color: hsl(var(--clr-light)); */
+	}
+
+	.cover[data-cover='true'] {
+		z-index: 1;
+		height: 100vh;
+		position: absolute;
+		background-color: rgba(0, 0, 0, 0.5);
+		width: 100vw;
+		transition: transform 600ms ease-in-out;
+	}
+}
