@@ -9,7 +9,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Spartan:wght@600;700&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Spartan:wght@500;600;700&display=swap"
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="style.css" />
@@ -28,7 +28,7 @@
 			}
 		</style>
 	</head>
-	<body>
+	<body class="wrapper">
 		<div class="cover" data-cover="false"></div>
 		<header class="flex header container">
 			<div class="flex brand-plus">
@@ -39,7 +39,7 @@
 					<img src="./images/logo.svg" alt="logo" />
 				</div>
 				<nav>
-					<ul class="flex primary-nav" id="navigation" data-open="false">
+					<ul class="flex primary-nav lowercase fw-500" id="navigation" data-open="false">
 						<li><a href="#">Home</a></li>
 						<li><a href="#">Shop</a></li>
 						<li><a href="#">About</a></li>
@@ -49,32 +49,111 @@
 			</div>
 		</header>
 		<main class="grid grid-container">
-			<div class="hero-top"></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-		</main>
-		Discover innovative ways to decorate We provide unmatched quality, comfort, and style for
-		property owners across the country. Our experts combine form and function in bringing your
-		vision to life. Create a room in your own style with our collection and make your property a
-		reflection of you and what you love. Shop now We are available all across the globe With stores
-		all over the world, it's easy for you to find furniture for your home or place of business.
-		Locally, we’re in most major cities throughout the country. Find the branch nearest you using
-		our store locator. Any questions? Don't hesitate to contact us today. Shop now Manufactured with
-		the best materials Our modern furniture store provide a high level of quality. Our company has
-		invested in advanced technology to ensure that every product is made as perfect and as
-		consistent as possible. With three decades of experience in this industry, we understand what
-		customers want for their home and office. Shop now About our furniture Our multifunctional
-		collection blends design and function to suit your individual taste. Make each room unique, or
-		pick a cohesive theme that best express your interests and what inspires you. Find the furniture
-		pieces you need, from traditional to contemporary styles or anything in between. Product
-		specialists are available to help you create your dream space.
+			<section class="showcase">
+				<ul class="slides" data-slides>
+					<li data-active><div>Slide 1</div></li>
+					<li><div>Slide 2</div></li>
+					<li><div>Slide 3</div></li>
+				</ul>
+			</section>
+			<section class="showcase-text">
+				<aside class="flex arrows">
+					<div>
+						<img
+							src="./images/icon-angle-left.svg"
+							alt="left arrow"
+							class="pointer"
+							data-button="prev"
+						/>
+					</div>
 
-		<div class="attribution">
-			Challenge by
-			<a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-			Coded by <a href="#">Your Name Here</a>.
-		</div>
+					<div>
+						<img
+							src="./images/icon-angle-right.svg"
+							alt="right arrow"
+							class="pointer"
+							data-button="next"
+						/>
+					</div>
+				</aside>
+				<ul class="text-slides" data-text-slides>
+					<li class="flow" style="--flow-space: 1.5rem" data-text-active>
+						<h1 class="text-black fs-700 fw-500">Discover innovative ways to decorate</h1>
+						<p class="fs-200">
+							We provide unmatched quality, comfort, and style for property owners across the
+							country. Our experts combine form and function in bringing your vision to life. Create
+							a room in your own style with our collection and make your property a reflection of
+							you and what you love.
+						</p>
+						<div class="flex cta">
+							<a href="#" class="fs-300 uppercase letter-spacing-1 text-deep-gray">Shop now</a>
+							<svg width="40" height="12" xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M34.05 0l5.481 5.527h.008v.008L40 6l-.461.465v.063l-.062-.001L34.049 12l-.662-.668 4.765-4.805H0v-1h38.206l-4.82-4.86L34.05 0z"
+									fill="#000"
+									fill-rule="nonzero"
+								/>
+							</svg>
+						</div>
+					</li>
+					<li class="flow" style="--flow-space: 1.5rem">
+						<h1 class="text-black fs-700 fw-500">We are available all across the globe</h1>
+						<p class="fs-200">
+							With stores all over the world, it's easy for you to find furniture for your home or
+							place of business. Locally, we’re in most major cities throughout the country. Find
+							the branch nearest you using our store locator. Any questions? Don't hesitate to
+							contact us today.
+						</p>
+						<div class="flex cta">
+							<a href="#" class="fs-300 uppercase letter-spacing-1 text-deep-gray">Shop now</a>
+							<svg width="40" height="12" xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M34.05 0l5.481 5.527h.008v.008L40 6l-.461.465v.063l-.062-.001L34.049 12l-.662-.668 4.765-4.805H0v-1h38.206l-4.82-4.86L34.05 0z"
+									fill="#000"
+									fill-rule="nonzero"
+								/>
+							</svg>
+						</div>
+					</li>
+					<li class="flow" style="--flow-space: 1.5rem">
+						<h1 class="text-black fs-700 fw-500">Manufactured with the best materials</h1>
+						<p class="fs-200">
+							Our modern furniture store provide a high level of quality. Our company has invested
+							in advanced technology to ensure that every product is made as perfect and as
+							consistent as possible. With three decades of experience in this industry, we
+							understand what customers want for their home and office.
+						</p>
+						<div class="flex cta">
+							<a href="#" class="fs-300 uppercase letter-spacing-1 text-deep-gray">Shop now</a>
+							<svg width="40" height="12" xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M34.05 0l5.481 5.527h.008v.008L40 6l-.461.465v.063l-.062-.001L34.049 12l-.662-.668 4.765-4.805H0v-1h38.206l-4.82-4.86L34.05 0z"
+									fill="#000"
+									fill-rule="nonzero"
+								/>
+							</svg>
+						</div>
+					</li>
+				</ul>
+			</section>
+			<div class="grid below">
+				<section>
+					<img src="./images/image-about-dark.jpg" alt="" />
+				</section>
+				<section class="about flow container">
+					<h2 class="uppercase text-black fs-200 letter-spacing-1">About our furniture</h2>
+					<p class="fs-200">
+						Our multifunctional collection blends design and function to suit your individual taste.
+						Make each room unique, or pick a cohesive theme that best express your interests and
+						what inspires you. Find the furniture pieces you need, from traditional to contemporary
+						styles or anything in between. Product specialists are available to help you create your
+						dream space.
+					</p>
+				</section>
+				<section>
+					<img src="./images/image-about-light.jpg" alt="" />
+				</section>
+			</div>
+		</main>
 	</body>
 </html>
